@@ -9,4 +9,5 @@
 --8) Unificaremos la rama feature1 con la rama principal, guardando todos los cambios realizados.
 --9) Mostratemos una situacion de conflicto que puede suceder y una serie de pasos para solucionarlo y mantener actualizado los repositorios.
 
+Primera modificacion pedida en el punto 6
 
