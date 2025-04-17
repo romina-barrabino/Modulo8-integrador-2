@@ -1,0 +1,115 @@
+--1) Descarga e instalación de Git:
+--En la página web https://git-scm.com/downloads se descarga la versión de Git para Windows. Git no es compatible con Windows 10, por lo que utilice una Mac.
+sudo port install git
+
+--Configurar con el nombre de usuario y correo electronico.
+git config --global user.name "Romina"
+git config --global user.email rominabarrabino@gmail.com
+
+--Verificar si se descargo correctamente.
+git --version
+
+--2)Creación e iniciación de un repositorio local: 
+
+--Crear un repositorio local.
+mkdir "Nombre_del_repositorio"
+
+--Ingresar al repositorio creado.
+cd "Nombre_del_repositorio"
+
+--Iniciar el repositorio.
+git init
+
+--3) Creacion y detalle de Readme.md:
+
+--Crear el archivo Readme.md.
+touch Readme.md
+
+--Entrar al archivo Readme.md para modificar su contenido.
+nano Readme.md
+
+--Texto para el Readme.md
+--Descripcion del proyecto:
+--1) Iniciaremos registrando los comandos para descargar la aplicacion Git y creando un usuario.
+--2) Luego, crearemos e iniciaremos un repositorio local.
+--3) Crearemos desde la terminal un archivo Readme.md con una descripcion del proyecto. Tambien se agrega al repositorio local y se realiza un commit para notificar las modificaciones.
+--4) Verificamos si existe y si estamos operando dentro de la rama principal o master. Sincronizaremos nuestro repositorio local con un repositorio remoto en GitHub para tener un respaldo de la rama principal originaria.
+--5) Creamos una nueva rama en el repositorio local llamada feature1, e ingresamos dentro de esta rama. Antes de realizar modificaciones, se guarda esta nueva rama al repositorio remoto.
+--6) Realizaremos y registraremos algunos cambios en el archivo Readme.md.
+--7) Enviaremos la rama feautere1 con las ultimas modificaciones a la repositorio remoto.
+--8) Unificaremos la rama feature1 con la rama principal, guardando todos los cambios realizados.
+--9) Mostratemos una situacion de conflicto que puede suceder y una serie de pasos para solucionarlo y mantener actualizado los repositorios.
+
+--Añadir el archivo Readme.md
+git add .
+
+--Confirmar y grabar las modificaciónes realizadas.
+git commit -m "Se creo el archivo Readme.md y se agrego una descripción del proyecto."
+
+--4)Rama principal (master):
+
+--Verificaremos si estamos en la rama principal llamada master.
+git branch
+
+--Sincronizar un repositorio remoto en GitHub al repositorio local(master):
+git remote add origin https://github.com/romina-barrabino/Modulo8-integrador-2.git
+
+--Enviar los cambios al repositorio remoto
+git push -u origin master 
+
+--5) Rama Feature1:
+
+--Crear la rama Feature1 de la rama Master.
+git branch feature/feature1 master
+
+--Ingresar a la rama Feature1.
+git checkout feature/feature1
+
+--Verificar si estoy en la rama Feature1
+git branch
+
+--Creamos la nueva rama en el repositorio remoto
+git push origin feacture/feature1
+
+--6)Cambios en Readme.md 
+
+--Entrar al archivo Readme.md para modificar su contenido.
+nano Readme.md
+
+--Añadir el archivo Readme.md
+git add Readme.md
+
+--Confirmar y grabar las modificaciónes realizadas.
+git commit -m "Se realizo una modificacion al archivo Readme.md."
+
+--7)Enviar la rama feature1 y sus modificaciones al repositorio remoto en GitHub:
+git push origin feature/feature1
+
+--8)Creación de Pull Request:
+--Esto se realiza desde GitHub para que las ramas nuevas se fusionen con la principal, y se guarden todos los cambios realizados hasta el momento.
+
+--9)Simulación de conflicto:
+--Se realizo una edicion el archivo Readme.md en la rama master desde GitHub, mientras se realizaba otra modificacion del archivo desde la rama feature1.
+
+--Resolución de conflictos:
+--1) Ingresar a la rama master desde el repositorio local.
+git checkout master
+--2) Modificar el archivo Readme.md desde nano Readme.md y guardarlo en el rama local 
+git checkout feature/feature1
+--3)Añadir el archivo Readme.md
+git add Readme.md
+--4)Confirmar y grabar las modificaciónes realizadas.
+git commit -m "Se realizo una modificacion al archivo Readme.md."
+--5)Enviar la rama feature1 y sus modificaciones al repositorio remoto en GitHub:
+git push origin feature/feature1
+--6) Actualizamos la rama master con todos los cambios hechos en GitHub.
+git pull origin master
+--7) No pude unificar el error desde la terminal ya que aparecia un conflicto en el archivo Readme.md. Por lo cual tuve que hacer desde GitHub un Pull Request y editar los cambios desde el archivo Readme.md. El merge tambien lo hice desde GitHub.
+--8)Cuando ya no existen conflictos, se guarda la actualizacion.
+git add Readme.md
+--9)Se notifica la modificacion realizada.
+git commit -m "Se resolvieron conflictos entre master y feature1. Ya se encuentran correctamente."
+--10)Sincronizar las modificaciones y resoluciones realizadas.
+git pull origin master
+
+----------------------------------------------------------
